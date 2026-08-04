@@ -1,0 +1,117 @@
+:root {
+  --bg: #07111f;
+  --card: rgba(255, 255, 255, 0.1);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --accent: #22d3ee;
+  --accent-2: #8b5cf6;
+  --success: #34d399;
+  --danger: #f87171;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg), #1e293b 55%, #312e81);
+  padding: 24px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 520px;
+}
+
+.container {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 24px;
+  padding: 36px 30px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  color: var(--text);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  color: var(--text);
+  outline: none;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #cbd5e1;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+#result {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  min-height: 48px;
+  display: none;
+  font-weight: 600;
+}
+
+#result.success {
+  display: block;
+  background: rgba(52, 211, 153, 0.16);
+  color: var(--success);
+}
+
+#result.fail {
+  display: block;
+  background: rgba(248, 113, 113, 0.16);
+  color: var(--danger);
+}
+
+.student-info {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted);
+}

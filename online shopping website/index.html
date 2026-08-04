@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazona Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Amazona</div>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#products">Deals</a>
+        <a href="#checkout">Checkout</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="top-actions">
+        <span class="pill">Free shipping over $100</span>
+        <button class="ghost-btn">Sign In</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="pill">Flash Sale • Up to 50% off</p>
+          <h1>Shop smarter with your Amazon-inspired storefront.</h1>
+          <p>
+            Browse favorites, adjust quantities, and instantly calculate your bill.
+          </p>
+          <a class="btn-primary" href="#products">Explore Products</a>
+        </div>
+
+        <aside class="hero-card" aria-label="Order summary">
+          <h2>Live Bill</h2>
+          <p>Subtotal: <strong id="subtotal">$0.00</strong></p>
+          <p>Shipping: <strong id="shipping">$0.00</strong></p>
+          <p>Total: <strong id="orderTotal">$0.00</strong></p>
+          <button class="btn-secondary" id="checkoutBtn">Place Order</button>
+        </aside>
+      </section>
+
+      <section class="products" id="products">
+        <div class="section-title">
+          <h2>Featured Products</h2>
+          <p>Select the quantity you want and see your bill update instantly.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Smartwatch" />
+            <h3>Noise Smartwatch</h3>
+            <p>Track your workouts, calls, and wellness in one sleek device.</p>
+            <div class="price-row">
+              <strong>$89.99</strong>
+              <label>
+                Qty
+                <select class="qty" data-price="89.99">
+                  <option value="0">0</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </label>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=900&q=80" alt="Wireless headphones" />
+            <h3>Neon Headphones</h3>
+            <p>Immersive sound and a lightweight design for every commute.</p>
+            <div class="price-row">
+              <strong>$59.50</strong>
+              <label>
+                Qty
+                <select class="qty" data-price="59.50">
+                  <option value="0">0</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </label>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="Running shoes" />
+            <h3>RunLite Sneakers</h3>
+            <p>Comfortable everyday sneakers built for comfort and style.</p>
+            <div class="price-row">
+              <strong>$74.25</strong>
+              <label>
+                Qty
+                <select class="qty" data-price="74.25">
+                  <option value="0">0</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </label>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="billing" id="checkout">
+        <div class="bill-card">
+          <h2>Billing Summary</h2>
+          <form class="promo-form">
+            <label for="promo">Promo code</label>
+            <div class="promo-row">
+              <input id="promo" name="promo" type="text" placeholder="SAVE10" />
+              <button class="btn-secondary" type="button" id="promoBtn">Apply</button>
+            </div>
+            <p id="promoMessage" class="promo-message">Try SAVE10 for 10% off.</p>
+          </form>
+
+          <div class="bill-line">
+            <span>Subtotal</span>
+            <strong id="billSubtotal">$0.00</strong>
+          </div>
+          <div class="bill-line">
+            <span>Shipping</span>
+            <strong id="billShipping">$0.00</strong>
+          </div>
+          <div class="bill-line">
+            <span>Discount</span>
+            <strong id="discount">$0.00</strong>
+          </div>
+          <div class="bill-line total">
+            <span>Total</span>
+            <strong id="billTotal">$0.00</strong>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer" id="about">
+      <p>Built with HTML5, CSS3, and JavaScript for a polished shopping experience.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

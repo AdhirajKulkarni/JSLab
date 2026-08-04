@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #0f172a, #4f46e5, #06b6d4, #10b981);
+      background-size: 400% 400%;
+      animation: bg 10s ease infinite;
+      padding: 20px;
+    }
+
+    @keyframes bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 35px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      color: white;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 14px 42px 14px 14px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.22);
+      color: white;
+      font-size: 15px;
+    }
+
+    .input-box input::placeholder {
+      color: #f3f4f6;
+    }
+
+    #toggle {
+      position: absolute;
+      right: 12px;
+      top: 14px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: #2563eb;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 6px;
+    }
+
+    button:hover {
+      transform: scale(1.02);
+      background: #f1f5f9;
+    }
+
+    .rules {
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .rules p {
+      margin: 7px 0;
+    }
+
+    .valid {
+      color: #bbf7d0;
+    }
+
+    .invalid {
+      color: #fecaca;
+    }
+
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #fef3c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .student-info {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .message {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+      min-height: 20px;
+      color: #fef3c7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome Back</h2>
+
+    <form onsubmit="return validateForm()">
+      <div class="input-box">
+        <input type="text" placeholder="Username" required />
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required />
+        <span id="toggle">👁</span>
+      </div>
+
+      <button type="submit">Login</button>
+
+      <div class="rules">
+        <p id="length" class="invalid">❌ At least 8 characters</p>
+        <p id="upper" class="invalid">❌ At least one uppercase letter</p>
+        <p id="number" class="invalid">❌ At least one number</p>
+        <p id="symbol" class="invalid">❌ At least one special character</p>
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <div class="student-info">
+        Designed by: <strong>Adhiraj Kulkarni</strong><br />
+        PRN: <strong>24070521033</strong>
+      </div>
+
+      <div class="footer">
+        Don't have an account? <a href="#">Register</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const password = document.getElementById('password');
+    const length = document.getElementById('length');
+    const upper = document.getElementById('upper');
+    const number = document.getElementById('number');
+    const symbol = document.getElementById('symbol');
+    const message = document.getElementById('message');
+
+    password.addEventListener('keyup', function () {
+      const value = password.value;
+
+      if (value.length >= 8) {
+        length.className = 'valid';
+        length.innerHTML = '✅ At least 8 characters';
+      } else {
+        length.className = 'invalid';
+        length.innerHTML = '❌ At least 8 characters';
+      }
+
+      if (/[A-Z]/.test(value)) {
+        upper.className = 'valid';
+        upper.innerHTML = '✅ At least one uppercase letter';
+      } else {
+        upper.className = 'invalid';
+        upper.innerHTML = '❌ At least one uppercase letter';
+      }
+
+      if (/[0-9]/.test(value)) {
+        number.className = 'valid';
+        number.innerHTML = '✅ At least one number';
+      } else {
+        number.className = 'invalid';
+        number.innerHTML = '❌ At least one number';
+      }
+
+      if (/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+        symbol.className = 'valid';
+        symbol.innerHTML = '✅ At least one special character';
+      } else {
+        symbol.className = 'invalid';
+        symbol.innerHTML = '❌ At least one special character';
+      }
+    });
+
+    function validateForm() {
+      const pass = password.value;
+      const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+      if (regex.test(pass)) {
+        message.textContent = 'Login Successful!';
+        return true;
+      } else {
+        message.textContent = 'Password does not meet all requirements.';
+        return false;
+      }
+    }
+
+    document.getElementById('toggle').onclick = function () {
+      if (password.type === 'password') {
+        password.type = 'text';
+        this.innerHTML = '🙈';
+      } else {
+        password.type = 'password';
+        this.innerHTML = '👁';
+      }
+    };
+  </script>
+</body>
+</html>

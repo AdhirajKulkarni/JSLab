@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grading System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student Grading System</h1>
+      <p>Enter marks to calculate total, percentage, and grade.</p>
+
+      <form id="gradingForm" class="grading-form">
+        <div class="form-grid">
+          <label>
+            Student Name
+            <input type="text" id="studentName" value="Adhiraj Kulkarni" required />
+          </label>
+          <label>
+            PRN
+            <input type="text" id="studentPrn" value="24070521033" required />
+          </label>
+        </div>
+
+        <div class="marks-grid">
+          <label>English <input type="number" class="subject-mark" min="0" max="100" value="85" /></label>
+          <label>Mathematics <input type="number" class="subject-mark" min="0" max="100" value="90" /></label>
+          <label>Science <input type="number" class="subject-mark" min="0" max="100" value="88" /></label>
+          <label>Computer <input type="number" class="subject-mark" min="0" max="100" value="92" /></label>
+        </div>
+
+        <button type="submit">Calculate Grade</button>
+      </form>
+
+      <div id="gradingResult" class="result" aria-live="polite">
+        <p><strong>Name:</strong> Adhiraj Kulkarni</p>
+        <p><strong>PRN:</strong> 24070521033</p>
+        <p><strong>Total:</strong> 355 / 400</p>
+        <p><strong>Percentage:</strong> 88.75%</p>
+        <p><strong>Grade:</strong> A</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+:root {
+  --bg1: #0f172a;
+  --bg2: #4f46e5;
+  --bg3: #06b6d4;
+  --bg4: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3), var(--bg4));
+  background-size: 400% 400%;
+  animation: bg 10s ease infinite;
+  padding: 20px;
+}
+
+@keyframes bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  color: white;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 42px 14px 14px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.22);
+  color: white;
+  font-size: 15px;
+}
+
+.input-box input::placeholder {
+  color: #f3f4f6;
+}
+
+#toggle {
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #2563eb;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 6px;
+}
+
+button:hover {
+  transform: scale(1.02);
+  background: #f1f5f9;
+}
+
+.rules {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.rules p {
+  margin: 7px 0;
+}
+
+.valid {
+  color: #bbf7d0;
+}
+
+.invalid {
+  color: #fecaca;
+}
+
+.footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #fef3c7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.student-info {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+.message {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  min-height: 20px;
+  color: #fef3c7;
+}
