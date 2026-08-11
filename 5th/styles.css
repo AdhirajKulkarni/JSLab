@@ -1,0 +1,144 @@
+:root {
+  --bg: #f4f4f9;
+  --card: #ffffff;
+  --border: #d8d8e8;
+  --text: #202040;
+  --accent: #2b6cb0;
+  --accent-soft: #bee3f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #f7fafc 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: 0 1rem 2rem;
+}
+
+h1,
+h2 {
+  margin: 0 0 1rem;
+}
+
+.form-card,
+.cart-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.form-row,
+.coupon-row {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.95rem 1.1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.cart-list {
+  min-height: 130px;
+}
+
+.empty {
+  margin: 0;
+  color: #6b7280;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.item-detail {
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.cart-item button {
+  background: #e53e3e;
+  padding: 0.6rem 0.9rem;
+}
+
+.coupon-message {
+  min-height: 1.4rem;
+  margin: 0 0 1rem;
+  color: #2f855a;
+}
+
+.totals {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.grand-total {
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .coupon-row {
+    grid-template-columns: 1fr auto;
+  }
+}
