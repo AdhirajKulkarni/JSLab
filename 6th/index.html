@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6th Folder String Functions</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 700px; margin: auto; }
+    h1, h2 { color: #333; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    label { display: block; margin: 10px 0 6px; font-weight: bold; }
+    input, button, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    button { cursor: pointer; background: #007acc; color: white; border: none; }
+    .output { white-space: pre-wrap; background: #f7f7f7; padding: 12px; border-radius: 6px; border: 1px solid #e0e0e0; }
+  </style>
+</head>
+<body>
+  <h1>String Functions in HTML + JavaScript</h1>
+  <p>Use these examples to test string reversal, matching, vowel extraction, and email validation.</p>
+
+  <div class="card">
+    <h2>1. Reverse a String</h2>
+    <label for="reverseInput">Enter text</label>
+    <input id="reverseInput" type="text" placeholder="Type something..." />
+    <button id="reverseButton">Reverse String</button>
+    <div class="output" id="reverseOutput"></div>
+  </div>
+
+  <div class="card">
+    <h2>2. Match Substring</h2>
+    <label for="matchText">Text</label>
+    <input id="matchText" type="text" placeholder="Enter the full text..." />
+    <label for="matchPattern">Search pattern</label>
+    <input id="matchPattern" type="text" placeholder="Enter the substring to find..." />
+    <button id="matchButton">Find Match</button>
+    <div class="output" id="matchOutput"></div>
+  </div>
+
+  <div class="card">
+    <h2>3. Extract Vowels</h2>
+    <label for="vowelInput">Enter text</label>
+    <input id="vowelInput" type="text" placeholder="Type something..." />
+    <button id="vowelButton">Extract Vowels</button>
+    <div class="output" id="vowelOutput"></div>
+  </div>
+
+  <div class="card">
+    <h2>4. Email Validation</h2>
+    <label for="emailInput">Enter email address</label>
+    <input id="emailInput" type="email" placeholder="example@mail.com" />
+    <button id="emailButton">Validate Email</button>
+    <div class="output" id="emailOutput"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
