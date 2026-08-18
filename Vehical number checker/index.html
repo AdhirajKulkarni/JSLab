@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Vehicle Number Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🚗 Indian Vehicle Number Checker</h1>
+            <p class="subtitle">Validate Indian Registration Numbers</p>
+            
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="vehicleNumber" 
+                    placeholder="Enter vehicle number (e.g., DL 01 AB 1234)"
+                    autocomplete="off"
+                    maxlength="15"
+                >
+                <button onclick="checkVehicleNumber()">Check</button>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div id="resultContent"></div>
+            </div>
+
+            <div class="info-section">
+                <h2>📋 Indian Number Format</h2>
+                <div class="format-guide">
+                    <div class="format-row">
+                        <span class="format-label">Pattern:</span>
+                        <span class="format-value">XX DD YY ZZZZ</span>
+                    </div>
+                    <div class="format-row">
+                        <span class="format-label">XX:</span>
+                        <span class="format-value">2 letters (State Code)</span>
+                    </div>
+                    <div class="format-row">
+                        <span class="format-label">DD:</span>
+                        <span class="format-value">2 digits (District Code)</span>
+                    </div>
+                    <div class="format-row">
+                        <span class="format-label">YY:</span>
+                        <span class="format-value">2 letters (Series)</span>
+                    </div>
+                    <div class="format-row">
+                        <span class="format-label">ZZZZ:</span>
+                        <span class="format-value">4 digits (Registration)</span>
+                    </div>
+                </div>
+
+                <h2>🏷️ Indian State Codes</h2>
+                <div class="state-grid" id="stateGrid"></div>
+            </div>
+
+            <div class="examples">
+                <h2>📝 Examples</h2>
+                <ul>
+                    <li><strong>DL 01 AB 1234</strong> - Delhi</li>
+                    <li><strong>MH 02 CD 5678</strong> - Maharashtra</li>
+                    <li><strong>KA 03 EF 9012</strong> - Karnataka</li>
+                    <li><strong>TN 04 GH 3456</strong> - Tamil Nadu</li>
+                    <li><strong>UP 05 IJ 7890</strong> - Uttar Pradesh</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
